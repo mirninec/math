@@ -1,0 +1,47 @@
+<div class="container ">
+    <div class="row">
+        <div class="col-lg-5 form-border-singup enter-center">
+            <h5>{{ text.login | titlecase }}</h5>
+            <form (ngSubmit)="onSubmit(f)" #f="ngForm" ngForm>
+                <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label">{{ text.emailAddress }}</label>
+                    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" ngModel name="loginEmail" required email #email="ngModel">
+                    <p class="help-block" *ngIf="email.valid || !email.touched" style="color: transparent;">Text</p>
+                    <p class="help-block" *ngIf="email.invalid && email.touched">Введите корректный email адресс</p>
+                </div>
+                <div class="mb-3">
+                    <label for="exampleInputPassword1" class="form-label">{{ text.password | titlecase }}</label>
+                    <input type="password" class="form-control" id="exampleInputPassword1" ngModel name="loginPassword" required>
+                </div>
+                <input type="hidden" name="loginForm" ngModel>
+                <button type="submit" class="btn btn-primary" [disabled]="f.invalid">{{ text.login | titlecase}}</button>
+            </form>
+        </div>
+
+        <div class="col-lg-5 form-border-register enter-center">
+            <h5>{{ text.register }}</h5>
+            <form (ngSubmit)="onSubmit(fr)" #fr="ngForm" ngForm>
+                <div class="mb-3">
+                    <label for="register-username" class="form-label">{{ text.username | titlecase}}</label>
+                    <input type="email" class="form-control" id="register-username" aria-describedby="emailHelp" ngModel name="username" required>
+                </div>
+                <div class="mb-3">
+                    <label for="register-email" class="form-label">{{ text.emailAddress }}</label>
+                    <input type="email" class="form-control" id="register-email" aria-describedby="emailHelp"  ngModel name="registerEmail" required #registerEmail="ngModel">
+                    <div id="emailHelp" class="form-text">{{ text.weNeverShare }}</div>
+                    <p class="help-block" *ngIf="registerEmail.valid || !registerEmail.touched" style="color: transparent;">Text</p>
+                    <p class="help-block" *ngIf="registerEmail.invalid && registerEmail.touched">Введите корректный email адресс</p>
+                </div>
+                <div class="mb-3">
+                    <label for="registerPassword" class="form-label">{{ text.password | titlecase }}</label>
+                    <input type="password" class="form-control" id="registerPassword" ngModel name="registerPassword" required>
+                </div>
+                <div class="mb-3">
+                    <label for="check-register-password" class="form-label">{{ text.repeatPassword | titlecase }}</label>
+                    <input type="password" class="form-control" id="check-register-password" ngModel name="checkRegisterPassword" required>
+                </div>
+                <button type="submit" class="btn btn-primary" [disabled]="fr.invalid">{{ text.register }}</button>
+            </form>
+        </div>
+    </div>
+</div>

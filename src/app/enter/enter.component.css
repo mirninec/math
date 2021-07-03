@@ -1,0 +1,23 @@
+.form-border-singup {
+    display: inline-block;
+    border: 1px solid green;
+    padding: 1rem;
+    border-radius: 7px;
+}
+
+.form-border-register {
+  display: inline-block;
+  border: 1px solid blue;
+  padding: 1rem;
+  border-radius: 7px;
+}
+
+.enter-center {
+    margin-top: 1rem;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+input.ng-invalid.ng-touched {
+  box-shadow: 0 0 4px 0 red;
+}
