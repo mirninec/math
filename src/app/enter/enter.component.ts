@@ -31,7 +31,6 @@ export class EnterComponent implements OnInit {
       let f = { email, password, username, repPassword };
       console.log(f);
     }
-    console.log(form)
-    // form.reset();
+    form.reset();
   }
 }

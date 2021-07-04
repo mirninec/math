@@ -20,7 +20,6 @@ export class AppComponent implements OnInit, OnDestroy {
 
   ngOnInit(){
     this.text = this.langService.fetchText(this.currentLanguage)
-    console.log(this.text)
     this.textSub = this.langService.textSbj.subscribe(
       data => {
         this.text = data
