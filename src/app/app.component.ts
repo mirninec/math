@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Subscription } from 'rxjs';
 import { LanguageService } from './language.service';
 
 @Component({
@@ -6,7 +7,9 @@ import { LanguageService } from './language.service';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent implements OnInit {
+export class AppComponent implements OnInit, OnDestroy {
+  textSub!: Subscription
+
   text: any
 
   constructor(private langService: LanguageService){}
@@ -18,6 +21,15 @@ export class AppComponent implements OnInit {
   ngOnInit(){
     this.text = this.langService.fetchText(this.currentLanguage)
     console.log(this.text)
+    this.textSub = this.langService.textSbj.subscribe(
+      data => {
+        this.text = data
+      }
+    )
+  }  
+
+  ngOnDestroy(){
+    this.textSub.unsubscribe()
   }
   
 }

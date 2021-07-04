@@ -25,6 +25,11 @@
       </ul>
 
       <ul class="navbar-nav ms-auto">
+        <div class="test">
+          <!-- <div [ngClass]="'{{ currentLanguage }}'"> -->
+          <div [ngClass]="{'russian': currentLanguage === 'russian','english': currentLanguage === 'english'}">
+          </div>
+        </div>
         <li class="nav-item">
           <a class="nav-link" aria-current="page" routerLink="change-lang">{{ text.changeLanguage }}</a>
         </li>

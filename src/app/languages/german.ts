@@ -1,1 +1,16 @@
-export const text_gr = {};
+export const text_gr = {
+  login: 'Anmeldung',
+  about: 'Über die Website',
+  learningProcess: 'Lernprozess',
+  whatInTheEnd: 'Was ist das Endergebnis?',
+  changeLanguage: 'Sprache ändern',
+  register: 'Einchecken',
+  emailAddress: 'E-Mail',
+  password: 'Passwort',
+  weNeverShare: 'Wir werden Ihre E-Mail niemals an Dritte weitergeben.',
+  username: 'Nutzername',
+  repeatPassword: 'Wiederhole das Passwort',
+  selectLanguage: 'Sprache wählen',
+  inputValidEMail: 'Bitte geben Sie eine gültige E-Mail-Adresse ein',
+  aboutMath: 'Über Mathematik',
+};

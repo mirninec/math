@@ -1,4 +1,16 @@
 <div class="container ">
+    <div class="social-group">
+        <a class="soсial btn-social facebooke"></a>
+        <div class="soсial btn-social vk"></div>
+        <div class="soсial btn-social twitter"></div>
+        <div class="soсial btn-social yandex"></div>
+        <div class="soсial btn-social ok"></div>
+        <div class="soсial btn-social telegram"></div>
+        <div class="soсial btn-social pinterest"></div>
+        <div class="soсial btn-social google"></div>
+        <div class="soсial btn-social instagram"></div>
+        <div class="soсial btn-social youtube"></div>
+    </div>
     <div class="row">
         <div class="col-lg-5 form-border-singup enter-center">
             <h5>{{ text.login | titlecase }}</h5>
@@ -7,7 +19,7 @@
                     <label for="exampleInputEmail1" class="form-label">{{ text.emailAddress }}</label>
                     <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" ngModel name="loginEmail" required email #email="ngModel">
                     <p class="help-block" *ngIf="email.valid || !email.touched" style="color: transparent;">Text</p>
-                    <p class="help-block" *ngIf="email.invalid && email.touched">Введите корректный email адресс</p>
+                    <p class="help-block" *ngIf="email.invalid && email.touched">{{ text.inputValidEMail }}</p>
                 </div>
                 <div class="mb-3">
                     <label for="exampleInputPassword1" class="form-label">{{ text.password | titlecase }}</label>
@@ -30,7 +42,7 @@
                     <input type="email" class="form-control" id="register-email" aria-describedby="emailHelp"  ngModel name="registerEmail" required #registerEmail="ngModel">
                     <div id="emailHelp" class="form-text">{{ text.weNeverShare }}</div>
                     <p class="help-block" *ngIf="registerEmail.valid || !registerEmail.touched" style="color: transparent;">Text</p>
-                    <p class="help-block" *ngIf="registerEmail.invalid && registerEmail.touched">Введите корректный email адресс</p>
+                    <p class="help-block" *ngIf="registerEmail.invalid && registerEmail.touched">{{ text.inputValidEMail }}</p>
                 </div>
                 <div class="mb-3">
                     <label for="registerPassword" class="form-label">{{ text.password | titlecase }}</label>

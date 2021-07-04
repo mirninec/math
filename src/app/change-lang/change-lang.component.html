@@ -1,68 +1,43 @@
-<h3>Выберите язык</h3>
+<h3>{{ text.selectLanguage }}</h3>
 
-<div class="lang">
+<div class="lang" (click)="changeLanguage('russian')" [ngClass]="{'active': currentLanguage === 'russian'}">
+    <div class="background ru">
+    </div>
+    <p>Русский</p>
+</div>
+
+<div class="lang" (click)="changeLanguage('english')" [ngClass]="{'active': currentLanguage === 'english'}">
     <div class="background gb">
     </div>
     <p>English</p>
 </div>
 
-<div class="lang">
+<div class="lang" (click)="changeLanguage('french')" [ngClass]="{'active': currentLanguage === 'french'}">
     <div class="background fr">
     </div>
     <p>Français</p>
 </div>
 
-<div class="lang">
+<div class="lang" (click)="changeLanguage('german')" [ngClass]="{'active': currentLanguage === 'german'}">
     <div class="background de">
     </div>
     <p>Deutsche</p>
 </div>
 
-<div class="lang">
+<div class="lang" (click)="changeLanguage('spanish')" [ngClass]="{'active': currentLanguage === 'spanish'}">
     <div class="background es">
     </div>
     <p>Español</p>
 </div>
 
-<div class="lang">
+<div class="lang" (click)="changeLanguage('portuguese')" [ngClass]="{'active': currentLanguage === 'portuguese'}">
     <div class="background pt">
     </div>
     <p>Português</p>
 </div>
 
-<div class="lang">
+<div class="lang" (click)="changeLanguage('italian')" [ngClass]="{'active': currentLanguage === 'italian'}">
     <div class="background it">
     </div>
     <p>Italiano</p>
 </div>
-
-<!-- 
-<div class="lang">
-    <div class="background ae">
-    </div>
-    <p>عرب</p>
-</div>
-
-<div class="lang">
-    <div class="background cn">
-    </div>
-    <p>中國人</p>
-</div>
-
-<div class="lang">
-    <div class="background kr">
-    </div>
-    <p>한국어</p>
-</div>
-
-<div class="lang">
-    <div class="background jp">
-    </div>
-    <p>日本語</p>
-</div>
-
-<div class="lang">
-    <div class="background in">
-    </div>
-    <p>भारतीय</p>
-</div> -->

@@ -6,11 +6,8 @@ export const text_en = {
   changeLanguage: 'Change Language',
   login: 'login',
   register: 'Register',
-  emailAddress: 'E-mail',
+  emailAddress: 'Email address',
   password: 'password',
   weNeverShare: "We'll never share your email with anyone else.",
   repeatPassword: 'Repeat password',
-  username: 'username',
-  selectLanguage: 'Choose language',
-  inputValidEMail: 'Please enter a valid email address',
-};
+  username: 'username',}
