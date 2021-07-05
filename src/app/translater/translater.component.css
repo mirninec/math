@@ -1,0 +1,15 @@
+.key {
+    color: red;
+}
+
+.value {
+  margin-right: 1rem;
+}
+
+.item {
+  border-radius: 5px;
+  padding: 0.2rem;
+  background-color: rgba(113, 255, 47, 0.274);
+  display: inline-block;
+  margin: 0.2rem;
+}

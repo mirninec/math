@@ -12,47 +12,127 @@
         <div class="soсial btn-social youtube"></div>
     </div>
     <div class="row">
+
+        <!-- ВХОД -->
         <div class="col-lg-5 form-border-singup enter-center">
             <h5>{{ text.login | titlecase }}</h5>
-            <form (ngSubmit)="onSubmit(f)" #f="ngForm" ngForm>
+
+            <form (ngSubmit)="onSubmitEnter()" [formGroup]="formEnter">
+
+                <!-- электронная почта формы LOGIN-->
                 <div class="mb-3">
-                    <label for="exampleInputEmail1" class="form-label">{{ text.emailAddress }}</label>
-                    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" ngModel name="loginEmail" required email #email="ngModel">
-                    <p class="help-block" *ngIf="email.valid || !email.touched" style="color: transparent;">Text</p>
-                    <p class="help-block" *ngIf="email.invalid && email.touched">{{ text.inputValidEMail }}</p>
+                    <label for="email" class="form-label">{{ text.emailAddress }}</label>
+                    <input type="email" class="form-control" id="email" aria-describedby="emailHelp"
+                        formControlName="email">
+                    <div *ngIf="formEnter.get('email')!.invalid && formEnter.get('email')!.touched">
+                        <small *ngIf="formEnter.get('email')!.errors!.required">
+                            {{ text.requiredField }}
+                        </small>
+                        <small *ngIf="formEnter.get('email')!.errors!.email">
+                            {{ text.inputValidEMail }}
+                        </small>
+                    </div>
                 </div>
+
+                <!-- пароль формы LOGIN-->
                 <div class="mb-3">
-                    <label for="exampleInputPassword1" class="form-label">{{ text.password | titlecase }}</label>
-                    <input type="password" class="form-control" id="exampleInputPassword1" ngModel name="loginPassword" required>
+                    <label for="password" class="form-label">{{ text.password | titlecase }}</label>
+                    <div class="showPassword" (click)="showPassword('password', $event)"></div>
+                    <input type="password" class="form-control" id="password" formControlName="password">
+                    
+                    <!-- <pre>
+                        {{ formEnter.get('password')!.errors | json }}
+                    </pre> -->
+                    <div *ngIf="formEnter.get('password').invalid && formEnter.get('password').touched">
+                        <small *ngIf="formEnter.get('password').errors.required">
+                            {{ text.requiredField }}
+                        </small>
+                        <small *ngIf="formEnter.get('password').errors.minlength">
+                            {{ text.min6char }}
+                        </small>
+                    </div>
                 </div>
-                <input type="hidden" name="loginForm" ngModel>
-                <button type="submit" class="btn btn-primary" [disabled]="f.invalid">{{ text.login | titlecase}}</button>
+                <!-- скрытое поле формы LOGIN-->
+                <input type="hidden" formControlName="hidden">
+
+                <button type="submit" class="btn btn-primary" [disabled]="formEnter.invalid">{{ text.login |
+                    titlecase}}</button>
+
             </form>
         </div>
 
+        <!-- РЕГИСТРАЦИЯ -->
         <div class="col-lg-5 form-border-register enter-center">
-            <h5>{{ text.register }}</h5>
-            <form (ngSubmit)="onSubmit(fr)" #fr="ngForm" ngForm>
+            <h5>{{ text.register | titlecase }}</h5>
+
+            <form (ngSubmit)="onSubmitRegister()" [formGroup]="formRegister">
+
+                <!-- имя пользователя формы REGISTER-->
                 <div class="mb-3">
                     <label for="register-username" class="form-label">{{ text.username | titlecase}}</label>
-                    <input type="email" class="form-control" id="register-username" aria-describedby="emailHelp" ngModel name="username" required>
+                    <input type="email" class="form-control" id="register-username" aria-describedby="emailHelp"
+                        formControlName="username">
+                    <div *ngIf="formRegister.get('username').invalid && formRegister.get('username').touched">
+                        <small *ngIf="formRegister.get('username').errors.required">
+                            {{ text.requiredField }}
+                        </small>
+                    </div>
                 </div>
+
+                <!-- электронная почта формы REGISTER-->
                 <div class="mb-3">
                     <label for="register-email" class="form-label">{{ text.emailAddress }}</label>
-                    <input type="email" class="form-control" id="register-email" aria-describedby="emailHelp"  ngModel name="registerEmail" required #registerEmail="ngModel">
+                    <input type="email" class="form-control" id="register-email" aria-describedby="emailHelp"
+                        formControlName="email">
+                    <div *ngIf="formRegister.get('email')!.invalid && formRegister.get('email')!.touched">
+                        <small *ngIf="formRegister.get('email').errors.required">
+                            {{ text.requiredField }}
+                        </small>
+                        <small *ngIf="formRegister.get('email').errors.email">
+                            {{ text.inputValidEMail }}
+                        </small>
+                    </div>
                     <div id="emailHelp" class="form-text">{{ text.weNeverShare }}</div>
-                    <p class="help-block" *ngIf="registerEmail.valid || !registerEmail.touched" style="color: transparent;">Text</p>
-                    <p class="help-block" *ngIf="registerEmail.invalid && registerEmail.touched">{{ text.inputValidEMail }}</p>
                 </div>
+
+                <!-- пароль формы REGISTER-->
                 <div class="mb-3">
                     <label for="registerPassword" class="form-label">{{ text.password | titlecase }}</label>
-                    <input type="password" class="form-control" id="registerPassword" ngModel name="registerPassword" required>
+                    <div class="showPassword" (click)="showPassword('registerPassword', $event)"></div>
+                    <input type="password" class="form-control" id="registerPassword" formControlName="password">
+                    <div *ngIf="formRegister.get('password').invalid && formRegister.get('password').touched">
+                        <small *ngIf="formRegister.get('password').errors.required">
+                            {{ text.requiredField }}
+                        </small>
+                    </div>
                 </div>
+
+                <!-- повторение пароля формы REGISTER-->
                 <div class="mb-3">
-                    <label for="check-register-password" class="form-label">{{ text.repeatPassword | titlecase }}</label>
-                    <input type="password" class="form-control" id="check-register-password" ngModel name="checkRegisterPassword" required>
+                    <label for="check-register-password" class="form-label">{{ text.repeatPassword | titlecase
+                        }}</label>
+                        <div class="showPassword" (click)="showPassword('check-register-password', $event)"></div>
+                    <input type="password" class="form-control" id="check-register-password"
+                        formControlName="repeatPassword">
+                    <div
+                        *ngIf="formRegister.get('repeatPassword')!.invalid && formRegister.get('repeatPassword')!.touched">
+                        <small *ngIf="formRegister.get('repeatPassword').errors.required">
+                            {{ text.requiredField }}
+                        </small>
+                        <small *ngIf="formRegister.get('repeatPassword').errors.passNoMatch">
+                            {{ text.passShouldMatch }}
+                        </small>
+                    </div>
+                    <!-- <pre>
+                         {{ formRegister.get('repeatPassword').errors | json }}
+                     </pre> -->
                 </div>
-                <button type="submit" class="btn btn-primary" [disabled]="fr.invalid">{{ text.register }}</button>
+                <!-- скрытое поле формы REGISTER-->
+                <input type="hidden" formControlName="hidden">
+
+                <button type="submit" class="btn btn-primary" [disabled]="formRegister.invalid">{{ text.register
+                    }}</button>
+
             </form>
         </div>
     </div>

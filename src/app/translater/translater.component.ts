@@ -1,8 +1,8 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
-import { Subscription } from 'rxjs';
-import { HttpService } from '../http.service';
+import { HttpService } from '../services/http.service';
 import { MultyTranslater } from './multy-translater';
+import { text_ru } from '../languages/russian';
 
 @Component({
   selector: 'app-traslater',
@@ -10,24 +10,23 @@ import { MultyTranslater } from './multy-translater';
   styleUrls: ['./translater.component.css'],
 })
 export class TranslaterComponent implements OnInit, OnDestroy {
-  translated!: { en: '', fr: '', de: '', sp: '', pr: '', it: ''}
+  currentValue: {key: string, value: string}[] = []
 
   constructor(private httpService: HttpService) {}
 
   ngOnInit(): void {
-   this.translated = { en: '', fr: '', de: '', sp: '', pr: '', it: ''}
+    const arrayKey = Object.keys(text_ru);
+    for(let i = 0; i < arrayKey.length; i++){
+      let key: string = arrayKey[i];
+      let value: string = (text_ru as any)[key]
+      this.currentValue.push({key, value})
+    }
   }
 
   onSubmit(form: NgForm) {
     const send: MultyTranslater = new MultyTranslater(form.value.key, form.value.value);
     this.httpService.postData(send).subscribe((data: any) => {
       console.log(data)
-      this.translated['en'] = data.result.resultEn;
-      this.translated['fr'] = data.result.resultFr;
-      // this.translated.de = data.result.resultDe;
-      // this.translated.sp = data.result.resultEs;
-      // this.translated.pr = data.result.resultPt;
-      // this.translated.it = data.result.resultIt;
     });
   }
 

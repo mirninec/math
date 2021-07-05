@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { MultyTranslater } from './translater/multy-translater';
+import { MultyTranslater } from '../translater/multy-translater';
 
 @Injectable({
   providedIn: 'root',

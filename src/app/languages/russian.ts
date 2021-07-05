@@ -13,4 +13,5 @@ export const text_ru = {
   selectLanguage: 'Выберите язык',
   inputValidEMail: 'Введите корректный email адрес',
   aboutMath: 'О математике',
-};
+
+requiredField: "Это поле обязательно для заполнения",min6char: "Минимальная длина пароля 6 символов",passShouldMatch: "Это поле должно совпадать с полем пароль",}

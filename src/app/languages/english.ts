@@ -13,4 +13,5 @@ export const text_en = {
   username: 'username',
   selectLanguage: 'Choose language',
   inputValidEMail: 'Please enter a valid email address',
-};
+
+requiredField: "This field is required",min6char: "Minimum password length 6 characters",passShouldMatch: "This field must match the password field",}

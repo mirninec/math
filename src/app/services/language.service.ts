@@ -1,12 +1,12 @@
 import { Injectable, OnInit } from '@angular/core';
 import { Subject } from 'rxjs';
-import { text_en } from './languages/english';
-import { text_fr } from './languages/french';
-import { text_gr } from './languages/german';
-import { text_it } from './languages/italian';
-import { text_pr } from './languages/portuguese';
-import { text_ru } from './languages/russian';
-import { text_sp } from './languages/spanish';
+import { text_en } from '../languages/english';
+import { text_fr } from '../languages/french';
+import { text_gr } from '../languages/german';
+import { text_it } from '../languages/italian';
+import { text_pr } from '../languages/portuguese';
+import { text_ru } from '../languages/russian';
+import { text_sp } from '../languages/spanish';
 
 @Injectable({
   providedIn: 'root',

@@ -1,6 +1,6 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
-import { LanguageService } from '../language.service';
+import { LanguageService } from '../services/language.service';
 
 @Component({
   selector: 'app-change-lang',

@@ -11,7 +11,7 @@ import { ResumeComponent } from './resume/resume.component';
 import { ChangeLangComponent } from './change-lang/change-lang.component';
 import { EnterComponent } from './enter/enter.component';
 import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { TranslaterComponent } from './translater/translater.component';
 import { HttpClientModule } from '@angular/common/http';
 
@@ -32,6 +32,7 @@ import { HttpClientModule } from '@angular/common/http';
     AppRoutingModule,
     CommonModule,
     FormsModule,
+    ReactiveFormsModule,
     HttpClientModule
   ],
   providers: [],
