@@ -14,4 +14,4 @@ export const text_fr = {
   inputValidEMail: "S'il vous plaît, mettez une adresse email valide",
   aboutMath: 'A propos des mathématiques',
 
-requiredField: "Ce champ est requis",min6char: "Longueur minimale du mot de passe 6 caractères",passShouldMatch: "Ce champ doit correspondre au champ du mot de passe",}
+requiredField: "Ce champ est requis",min6char: "Longueur minimale du mot de passe 6 caractères",passShouldMatch: "Ce champ doit correspondre au champ du mot de passe",forgotPassword: "Mot de passe oublié?",selectLanguageComminication: "Choisissez la langue de communication",}
