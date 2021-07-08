@@ -1,5 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
 
+/* LANGUAGES */
 /* russia */
 .russian {
   background: url('./assets/img/flags/russia.svg');
@@ -62,3 +63,66 @@
   height: 60%;
   background-size: 100% 100%;
 }
+/* END LANGUAGES */
+
+/* SOCIAL NETWORKS */
+.facebooke {
+  background-image: url('./assets/img/social/facebook.svg');
+  background-color: #9AABD7;
+  background-size: 40%;
+}
+.vk {
+  background-image: url('./assets/img/social/vk.svg');
+  background-color: #2787F5;
+  background-size: 70%;
+}
+
+.twitter {
+  background-image: url('./assets/img/social/twitter.svg');
+  background-color: #1CA1F2;
+  background-size: 65%;
+}
+
+.yandex {
+  background-image: url('./assets/img/social/yandex.svg');
+  background-size: 30%;
+  background-color: #fc3e1dde;
+}
+
+.ok {
+  background-image: url('./assets/img/social/ok.svg');
+  background-size: 40%;
+  background-color: #F0993A;
+}
+
+.telegram {
+  background-image: url('./assets/img/social/telegram.svg');
+  background-size: 60%;
+  background-color: #57B5EB;
+}
+
+.pinterest {
+  background-image: url('./assets/img/social/pinterest.svg');
+  background-size: 45%;
+  background-color: #e60023d3;
+}
+
+.google {
+  background-image: url('./assets/img/social/google.svg');
+  background-size: 80%;
+  background-color: #d9e9fa;
+}
+
+.instagram {
+  background-image: url('./assets/img/social/instagram.svg'),
+    linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+  background-size: 60%, 100%;
+}
+
+.youtube {
+  background-image: url('./assets/img/social/youtube.svg');
+  background-size: 70%;
+  background-color: #FF0000;
+}
+
+/* END SOCIAL NETWORKS */

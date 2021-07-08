@@ -10,6 +10,6 @@ export class HttpService {
 
   postData(req: MultyTranslater){
     const body = { key: req.key, value: req.value}
-    return this.http.post('http://localhost:3000/', body)
+    return this.http.post('http://localhost:1025', body)
   }
 }

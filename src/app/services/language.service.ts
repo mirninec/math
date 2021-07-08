@@ -13,29 +13,32 @@ import { text_sp } from '../languages/spanish';
 })
 export class LanguageService {
 
+  // local storage
+  storage = window.localStorage;
+
   // содержит текс всего приложения
-  text = text_en
+  text = text_en;
 
   // подписка для отправки текста приложения
-  textSbj = new Subject<any>()
+  textSbj = new Subject<any>();
 
   // отображает текущий язык для всего приложения
-  currentLanguage = 'english';
+  currentLanguage = this.storage.getItem('language') || 'english'
 
   constructor() {}
 
   // смена языка
   changeLanguage(newLanguage: string): void {
     // если новый язык совпадаем с уже установленным, ничего не делаем
-    if ((this.currentLanguage === newLanguage)) {
-      console.log('уже установлен')
+    if (this.currentLanguage === newLanguage) {
       return;
     }
-    // иначе, 
+    // иначе,
     // this.text = this.fetchText(newLanguage)
     this.textSbj.next(this.fetchText(newLanguage));
     this.currentLanguage = newLanguage;
-    console.log(this.currentLanguage)
+    this.storage.setItem('language', newLanguage);
+    console.log(this.currentLanguage);
   }
 
   fetchText(lang: string) {

@@ -15,4 +15,4 @@ export const text_sp = {
     'Por favor, introduce una dirección de correo electrónico válida',
   aboutMath: 'Acerca de las matemáticas',
 
-requiredField: "Este campo es obligatorio",min6char: "Longitud mínima de la contraseña 6 caracteres",passShouldMatch: "Este campo debe coincidir con el campo de la contraseña",forgotPassword: "¿Olvidaste tu contraseña?",selectLanguageComminication: "Elija el idioma de comunicación",}
+requiredField: "Este campo es obligatorio",min6char: "Longitud mínima de la contraseña 6 caracteres",passShouldMatch: "Este campo debe coincidir con el campo de la contraseña",forgotPassword: "¿Olvidaste tu contraseña?",selectLanguageComminication: "Elija el idioma de comunicación",pageNotFound: "no existe tal página",compliteTheCourse: "Después de completar el curso sabrás",}

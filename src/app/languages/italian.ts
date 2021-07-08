@@ -14,4 +14,4 @@ export const text_it = {
   inputValidEMail: 'Si prega di inserire un indirizzo email valido',
   aboutMath: 'A proposito di matematica',
 
-requiredField: "Questo campo è obbligatorio",min6char: "Lunghezza minima della password 6 caratteri",passShouldMatch: "Questo campo deve corrispondere al campo della password",forgotPassword: "Hai dimenticato la password?",selectLanguageComminication: "Scegli la lingua di comunicazione",}
+requiredField: "Questo campo è obbligatorio",min6char: "Lunghezza minima della password 6 caratteri",passShouldMatch: "Questo campo deve corrispondere al campo della password",forgotPassword: "Hai dimenticato la password?",selectLanguageComminication: "Scegli la lingua di comunicazione",pageNotFound: "non esiste una pagina simile",compliteTheCourse: "Dopo aver completato il corso lo saprai",}

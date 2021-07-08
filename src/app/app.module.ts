@@ -14,6 +14,7 @@ import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { TranslaterComponent } from './translater/translater.component';
 import { HttpClientModule } from '@angular/common/http';
+import { NotFoundComponent } from './not-found/not-found.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { HttpClientModule } from '@angular/common/http';
     ResumeComponent,
     ChangeLangComponent,
     EnterComponent,
-    TranslaterComponent
+    TranslaterComponent,
+    NotFoundComponent
   ],
   imports: [
     BrowserModule,

@@ -24,7 +24,7 @@ export class EnterComponent implements OnInit {
         Validators.required,
         Validators.minLength(6),
       ]),
-      hidden: new FormControl('loginForm'),
+      formType: new FormControl('loginForm'),
     });
     this.formRegister = new FormGroup({
       username: new FormControl(null, [Validators.required]),
@@ -37,14 +37,15 @@ export class EnterComponent implements OnInit {
         Validators.required,
         PassMatchValidator(),
       ]),
-      hidden: new FormControl('registerForm'),
+      formType: new FormControl('registerForm'),
+      language: new FormControl(this.langService.currentLanguage),
     });
   }
 
-  showPassword(id: string, event: Event){
-    const input = document.getElementById(id) as HTMLInputElement
-    if(input.type === 'password'){
-      input.type = "text";
+  showPassword(id: string, event: Event) {
+    const input = document.getElementById(id) as HTMLInputElement;
+    if (input.type === 'password') {
+      input.type = 'text';
     } else {
       input.type = 'password';
     }
@@ -60,6 +61,10 @@ export class EnterComponent implements OnInit {
   onSubmitRegister() {
     console.log(this.formRegister.value);
     this.formRegister.reset();
+  }
+
+  selectLangCom(){
+    console.log('select')
   }
 }
 

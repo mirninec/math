@@ -14,4 +14,4 @@ export const text_pr = {
   inputValidEMail: 'Por favor insira um endereço de e-mail válido',
   aboutMath: 'Sobre matemática',
 
-requiredField: "Este campo é obrigatório",min6char: "Senha com comprimento mínimo de 6 caracteres",passShouldMatch: "Este campo deve corresponder ao campo de senha",forgotPassword: "Esqueceu sua senha?",selectLanguageComminication: "Escolha a linguagem de comunicação",}
+requiredField: "Este campo é obrigatório",min6char: "Senha com comprimento mínimo de 6 caracteres",passShouldMatch: "Este campo deve corresponder ao campo de senha",forgotPassword: "Esqueceu sua senha?",selectLanguageComminication: "Escolha a linguagem de comunicação",pageNotFound: "essa página não existe",compliteTheCourse: "Depois de concluir o curso você saberá",}
